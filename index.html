@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TODO: name here</title>
+
+<script src="lib/three.js"></script>
+<script src="lib/PointerLockControls.js"></script>
+<!--<script src="lib/DeviceOrientationControls.js"></script>-->
+<!--<script src="lib/WebVR.js"></script>-->
+
+<!--https://github.com/josephg/noisejs-->
+<script src="lib/perlin.js"></script>
+
+<script src="util.js"></script>
+<script src="flags.js"></script>
+
+<script src="core.js"></script>
+<script src="renderer.js"></script>
+<script src="worldgen.js"></script>
+<script src="blocks.js"></script>
+<script src="inventory.js"></script>
+<script src="crafting.js"></script>
+<script src="furnace.js"></script>
+<script src="save.js"></script>
+<script src="timedactions.js"></script>
+<script src="chest.js"></script>
+<script src="food.js"></script>
+<script src="health.js"></script>
+<script src="death.js"></script>
+
+<script src="entity_pig.js"></script>
+<script src="entity.js"></script>
+
+<script src="blocklist.js"></script>
+<script src="gui.js"></script>
+
+<link rel="stylesheet" type="text/css" href="inventory.css">
+<link rel="stylesheet" type="text/css" href="crafting.css">
+<link rel="stylesheet" type="text/css" href="statusbar.css">
+<link rel="stylesheet" type="text/css" href="gui.css">
+<link rel="stylesheet" type="text/css" href="death.css">
+
+<style>
+body {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#cursor {
+  color: white;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  
+  position: fixed;
+  display: block;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#tint {
+  position: fixed;
+  pointer-events: none;
+}
+
+#hand {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div id="tint"></div>
+<div id="cursor">+</div>
+<div id="inventory_hotbar"></div>
+<div id="hunger"></div>
+<div id="health"></div>
+<div id="crafting"></div>
+<div id="hand"></div>
+<div id="gui"></div>
+<div id="death"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+#hunger, #health {
+  width: 540px; /* for alignment with inventory hotbar */
+  height: 20px;
+  
+  position: fixed;
+  display: block;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  padding-bottom: 68px;
+  text-align: right;
+}
+
+#health {
+  text-align: left;
+}
+
+.hunger_icon, .health_icon {
+  width: 22px;
+  height: 22px;
+  
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}

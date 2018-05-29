@@ -91,6 +91,7 @@
 //TODO: shears
   //TODO: wool
   //TODO: dye
+//TODO: fix reload button
 
 var camera;
 var renderer;
@@ -845,11 +846,11 @@ function animate() {
       if(movedKeyboardZ) { controls.getObject().position.z = newZ; }
       controls.getObject().translateY(-zSpeed);
       zSpeed = 0;
-    } else {
+    }/* else {
       if(zSpeed > 0) {
         fallStartZ = controls.getObject().position.y;
       }
-    }
+    }*/
     
     //falling out of the world
     if(controls.getObject().position.y < -100) {

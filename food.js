@@ -1,4 +1,4 @@
-var playerSaturation = 5;
+var playerSaturation = FLAG_MAX_HUNGER; //was 5
 var playerHunger = FLAG_MAX_HUNGER;
 var playerExhaustion = 0; //TODO: use this - see https://minecraft.gamepedia.com/Hunger
 

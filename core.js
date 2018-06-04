@@ -463,9 +463,11 @@ function onResize() {
   tint.style.height = window.innerHeight + "px";
 }
 
+var onGround = false;
 function checkCollision() {
   speculativeSwimming = false;
   headSwimming = false;
+  onGround = false;
   
   //collision detection
   //apply x/y/z deltas to create a box around the player
@@ -497,6 +499,9 @@ function checkCollision() {
           }
           
           if(!walkable) {
+            if(deltaZ == -1.5) {
+              onGround = true;
+            }
             return false;
           }
         }
@@ -727,7 +732,13 @@ function animate() {
             if("damage" in blocks[item.id][2]) {
               damage = blocks[item.id][2].damage;
             }
-            
+          }
+        }
+        
+        var didDamage = damageEntity(entitySel, damage);
+        if(didDamage && hotbarSelectorPosition < inventory.length) {
+          var item = inventory[hotbarSelectorPosition];
+          if(item != null) {
             if("toolType" in blocks[item.id][2]) {
               toolType = blocks[item.id][2].toolType;
               if(toolType > 0) {
@@ -740,8 +751,6 @@ function animate() {
             }
           }
         }
-        
-        damageEntity(entitySel, damage);
       }
       doDestroy = false;
       
@@ -833,6 +842,9 @@ function animate() {
       jumpTime = 0;
       //keysPressed[5] = false;
       //processKeys();
+      if(!onGround) {
+        jumpTime = FLAG_MAX_JUMP_TIME + 1;
+      }
       
       var fallDistance = Math.round(fallStartZ - controls.getObject().position.y);
       if(fallDistance > 3 && !swimming) {

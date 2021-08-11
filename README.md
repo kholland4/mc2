@@ -1,3 +1,5 @@
+## This project is abandoned. Consider checking out the newer rewrite [https://www.tausquared.net/mc4/](https://www.tausquared.net/mc4/).
+
 # mc2
 A work-in-progress Minecraft clone. Uses the [New Start](https://www.planetminecraft.com/texture_pack/new-start---by-loufisch/) texture pack.
 
